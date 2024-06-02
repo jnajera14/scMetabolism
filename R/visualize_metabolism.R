@@ -40,7 +40,7 @@ DimPlot.metabolism <- function(obj, pathway, dimention.reduction.type = "umap", 
 
 
     library(ggplot2)
-    plot <- ggplot(data=signature_ggplot, aes(x=UMAP_1, y=UMAP_2, color = signature_ggplot[,3])) +  #this plot is great
+    plot <- ggplot(data=signature_ggplot, aes(x=umap_1, y=umap_2, color = signature_ggplot[,3])) +  #this plot is great
       geom_point(size = size) +
       scale_fill_gradientn(colours = pal) +
       scale_color_gradientn(colours = pal) +
