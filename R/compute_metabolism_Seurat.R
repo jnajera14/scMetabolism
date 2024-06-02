@@ -13,6 +13,8 @@ sc.metabolism.Seurat <- function(obj, method = "VISION", imputation = F, ncores 
   countexp<-obj@assays$RNA@layers$counts
 
   countexp<-data.frame(as.matrix(countexp))
+  rownames(countexp) <- rownames(mrg_fibroblasts@assays$RNA@features)
+  colnames(countexp) <- rownames(mrg_fibroblasts@assays$RNA@cells@.Data)
 
   #signatures_KEGG_metab <- "./data/KEGG_metabolism_nc.gmt"
   #signatures_REACTOME_metab <- "./data/REACTOME_metabolism.gmt"
