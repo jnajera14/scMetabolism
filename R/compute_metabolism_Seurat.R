@@ -19,15 +19,18 @@ sc.metabolism.Seurat <- function(obj, method = "VISION", imputation = F, ncores 
   #signatures_KEGG_metab <- "./data/KEGG_metabolism_nc.gmt"
   #signatures_REACTOME_metab <- "./data/REACTOME_metabolism.gmt"
   #signatures_HALLMARK_metab <- "./data/HALLMARK_metabolism_mechanotransduction.gmt"
+  #signatures_MECHANO <- "./data/Mechanotransduction.gmt"
 
   signatures_KEGG_metab <- system.file("data", "KEGG_metabolism_nc.gmt", package = "scMetabolism")
   signatures_REACTOME_metab <- system.file("data", "REACTOME_metabolism.gmt", package = "scMetabolism")
   signatures_HALLMARK_metab <- system.file("data", "HALLMARK_metabolism_mechanotransduction.gmt", package = "scMetabolism")
+  signatures_MECHANO <- system.file("data", "Mechanotransduction.gmt", package = "scMetabolism")
 
 
   if (metabolism.type == "KEGG")  {gmtFile<-signatures_KEGG_metab; cat("Your choice is: KEGG\n")}
   if (metabolism.type == "REACTOME")  {gmtFile<-signatures_REACTOME_metab; cat("Your choice is: REACTOME\n")}
   if (metabolism.type == "HALLMARK")  {gmtFile<-signatures_HALLMARK_metab; cat("Your choice is: HALLMARK\n")}
+  if (metabolism.type == "MECHANO")  {gmtFile<-signatures_MECHANO; cat("Your choice is: MECHANO\n")}
 
 
   #imputation
